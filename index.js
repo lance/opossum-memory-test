@@ -21,10 +21,13 @@ setTimeout(end, day()/2)
 
 start()
 
-// fire the circuit, adding two random integers
+// fire the circuit, getting memory used
 // then do it again a half second later
 async function start() {
   endMemory = await circuit.fire()
+  // TODO: it would be nice to have some visualization of
+  // gradual change over time, without having to print out
+  // millions of memory samplings.
   // console.log(`Memory used: ${endMemory} MiB`)
   setTimeout(start, 500)
 }
